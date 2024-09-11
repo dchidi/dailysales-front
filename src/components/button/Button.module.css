@@ -12,3 +12,14 @@ button {
   background-color: rgb(148, 159, 242);
   transform: scale(0.8em);
 }
+.light {
+  border: solid 1px #999;
+  background-color: #fff;
+  color: #222;
+  transition: background-color 1.5s ease-out;
+}
+
+.light:hover {
+  background-color: rgb(237, 239, 255);
+  transform: scale(0.8em);
+}
