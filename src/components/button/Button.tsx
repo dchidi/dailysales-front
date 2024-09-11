@@ -4,7 +4,7 @@ import style from "./Button.module.css";
 interface IButton {
   text: string;
   onClick: () => void;
-  type?: "primary" | "secondary";
+  type?: "primary" | "secondary" | "light";
 }
 export const Button: React.FC<IButton> = ({
   text,

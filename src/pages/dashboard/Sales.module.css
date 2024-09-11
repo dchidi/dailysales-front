@@ -1,0 +1,18 @@
+.graph {
+  width: 100vw;
+  height: 60vh;
+  background-color: rgb(81, 96, 207);
+  position: relative; /* Required for absolute positioning */
+  padding: 1em;
+}
+
+.graph div {
+  height: 90%; /* Ensure the child div takes the full height */
+}
+.graph h4 {
+  color: rgb(255, 224, 167);
+}
+.table {
+  color: #fff;
+  height: 40vh;
+}

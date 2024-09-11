@@ -1,21 +1,28 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../context/AuthContext";
+import DailySalesTrend from "../../features/graph/DailySalesTrend";
+import style from "./Sales.module.css";
+import Table from "../../features/table/Table";
 
 const Sales: React.FC = () => {
-  const { logout } = useAuth();
-  const navigate = useNavigate();
-
-  const handleLogin = () => {
-    logout();
-    navigate("/login");
-  };
-
   return (
-    <div>
-      <h1>Login Page</h1>
-      <button onClick={handleLogin}>Logout</button>
-    </div>
+    <>
+      <div className={style.graph}>
+        <h4>All Products</h4>
+        <div>
+          <DailySalesTrend />
+        </div>
+      </div>
+      <div className={style.table}>
+        <Table />
+      </div>
+      <div className={style.graph}>
+        <h4>All Products excluding PetID</h4>
+        <div>
+          <DailySalesTrend />
+        </div>
+      </div>
+      <div className={style.table}></div>
+    </>
   );
 };
 
