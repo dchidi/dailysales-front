@@ -1,0 +1,14 @@
+button {
+  border: 0;
+  padding: 5px 10px;
+}
+.primary {
+  background-color: rgb(118, 128, 203);
+  color: #fff;
+  transition: background-color 1.5s ease-out;
+}
+
+.primary:hover {
+  background-color: rgb(148, 159, 242);
+  transform: scale(0.8em);
+}

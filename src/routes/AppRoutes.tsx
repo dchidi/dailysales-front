@@ -4,7 +4,7 @@ import ProtectedRoute from "../features/ProtectedRoute";
 import DashboardRoutes from "./DashboardRoutes";
 import NotFound from "../pages/NotFound";
 
-const AppRoutes = () => {
+const AppRoutes: React.FC = () => {
   return (
     <Routes>
       <Route index element={<Login />} />
