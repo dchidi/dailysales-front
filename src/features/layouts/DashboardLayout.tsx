@@ -2,6 +2,7 @@ import { Outlet, useNavigate } from "react-router-dom";
 import { Button } from "../../components/button/Button";
 import style from "./DashboardLayout.module.css";
 import { useAuth } from "../../context/AuthContext";
+import DatePicker from "../../components/date_picker/DatePicker";
 
 const DashboardLayout: React.FC = () => {
   const { logout } = useAuth();
@@ -21,11 +22,7 @@ const DashboardLayout: React.FC = () => {
         </div>
         <div className={style.rightAligned}>
           <Button text="All Geo" onClick={() => {}} type="light" />
-          <Button
-            text="Report at 11 Jan 2024"
-            onClick={() => {}}
-            type="light"
-          />
+          <DatePicker />
           <Button text="Logout" onClick={handleLogin} type="light" />
         </div>
       </div>

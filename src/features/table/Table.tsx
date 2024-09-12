@@ -6,13 +6,13 @@ const Table: React.FC = () => {
     <table className={style.table}>
       <thead>
         <tr>
-          <th>All Geos</th>
-          <th>Yesterday NB</th>
+          <th>All Geos Data</th>
+          <th>Yesterday's NB</th>
           <th>MTD (Up to Yesterday)</th>
-          <th>MTD LAST YEAR</th>
+          <th>MTD 2023</th>
           <th>Difference (MTD) #</th>
           <th>Difference (MTD) %</th>
-          <th>Month End Total LAST YEAR</th>
+          <th>Aug 2023 Total</th>
           <th>MTD Target</th>
           <th>Target Difference (Target x MTD)</th>
           <th>Target Delta (MTD) %</th>
