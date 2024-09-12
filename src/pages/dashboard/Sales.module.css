@@ -10,9 +10,9 @@
   height: 90%; /* Ensure the child div takes the full height */
 }
 .graph h4 {
-  color: rgb(255, 224, 167);
+  color: rgb(255, 236, 200);
 }
 .table {
   color: #fff;
-  height: 40vh;
+  height: fit-content;
 }

@@ -92,7 +92,7 @@ const options = {
       font: {
         family: "Figtree", // Customize the font family
         size: 20, // Customize the font size
-        weight: "normal", // You can also adjust font weight
+        weight: "normal" as const, // You can also adjust font weight
       },
     },
   },
@@ -111,7 +111,7 @@ const options = {
         font: {
           family: "Figtree", // Customize the font family
           size: 14, // Customize the font size
-          weight: "normal", // You can also adjust font weight
+          weight: "normal" as const, // You can also adjust font weight
         },
       },
     },
@@ -129,7 +129,7 @@ const options = {
         font: {
           family: "Figtree", // Customize the font family
           size: 14, // Customize the font size
-          weight: "normal", // You can also adjust font weight
+          weight: "normal" as const, // You can also adjust font weight
         },
       },
       beginAtZero: true,
