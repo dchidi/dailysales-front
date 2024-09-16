@@ -1,7 +1,7 @@
 import React from "react";
-import DailySalesTrend from "../../features/graph/DailySalesTrend";
 import style from "./Sales.module.css";
 import Table from "../../features/table/Table";
+import AUAllProductsGraph from "../../features/au/AllProductsGraph";
 
 const Sales: React.FC = () => {
   return (
@@ -9,7 +9,8 @@ const Sales: React.FC = () => {
       <div className={style.graph}>
         <h4>All Products</h4>
         <div>
-          <DailySalesTrend />
+          {/* <DailySalesTrend /> */}
+          <AUAllProductsGraph />
         </div>
       </div>
       <div className={style.table}>
@@ -17,9 +18,7 @@ const Sales: React.FC = () => {
       </div>
       <div className={style.graph}>
         <h4>All Products excluding PetID</h4>
-        <div>
-          <DailySalesTrend />
-        </div>
+        <div>{/* <DailySalesTrend /> */}</div>
       </div>
       <div className={style.table}></div>
     </>
