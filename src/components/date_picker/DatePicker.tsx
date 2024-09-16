@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import dayjs from "dayjs";
-import styles from "./DatePicker.module.css"; // Import the CSS module
+import styles from "./DatePicker.module.css";
 
 const months = Array.from({ length: 12 }, (_, i) =>
   dayjs().month(i).format("MMMM")
@@ -64,6 +64,15 @@ const DatePicker: React.FC = () => {
     setYearDropdownOpen(false);
   };
 
+  const toggleMonthSelection = () => {
+    setMonthDropdownOpen(!isMonthDropdownOpen);
+    setYearDropdownOpen(false);
+  };
+  const toggleYearSelection = () => {
+    setYearDropdownOpen(!isYearDropdownOpen);
+    setMonthDropdownOpen(false);
+  };
+
   return (
     <div className={styles.datePicker}>
       <div
@@ -82,7 +91,7 @@ const DatePicker: React.FC = () => {
               {/* Month Dropdown */}
               <span
                 className={styles.datePickerHeaderItem}
-                onClick={() => setMonthDropdownOpen(!isMonthDropdownOpen)}
+                onClick={toggleMonthSelection}
               >
                 {currentDate.format("MMMM")}
               </span>
@@ -103,7 +112,7 @@ const DatePicker: React.FC = () => {
               {/* Year Dropdown */}
               <span
                 className={styles.datePickerHeaderItem}
-                onClick={() => setYearDropdownOpen(!isYearDropdownOpen)}
+                onClick={toggleYearSelection}
               >
                 {currentDate.format("YYYY")}
               </span>

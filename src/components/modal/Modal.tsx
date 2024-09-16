@@ -1,4 +1,3 @@
-// src/components/Modal.tsx
 import React, { useCallback } from "react";
 import ReactDOM from "react-dom";
 import styles from "./Modal.module.css";
