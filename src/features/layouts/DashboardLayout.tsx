@@ -5,6 +5,7 @@ import { useAuth } from "../../context/AuthContext";
 import DatePicker from "../../components/date_picker/DatePicker";
 import Modal from "../../components/modal/Modal";
 import { useState } from "react";
+import { useReportingCtx } from "../../context/ReportingContext";
 
 const DashboardLayout: React.FC = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -13,6 +14,7 @@ const DashboardLayout: React.FC = () => {
   const closeModal = () => setModalOpen(false);
 
   const { logout } = useAuth();
+  const { reportingDate } = useReportingCtx();
   const navigate = useNavigate();
   const handleLogin = () => {
     logout();
@@ -24,7 +26,8 @@ const DashboardLayout: React.FC = () => {
         <div>
           <div>Petcover</div>
           <h4>
-            Daily Sales Report <span className={style.date}>11/08/2024</span>
+            Daily Sales Report{" "}
+            <span className={style.date}>{reportingDate.to}</span>
           </h4>
         </div>
         <div className={style.rightAligned}>

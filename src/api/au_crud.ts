@@ -1,10 +1,15 @@
-// src/api/crud.ts
 import apiClient from "./axios";
-import { api_au_graph_data } from "./routes";
+import { api_au_graph_data, api_au_table_data } from "./routes";
 
-export const fetchAUSalesGraphAllProd = async () => {
-  const graph_url = api_au_graph_data("2024-09-01", "2024-09-13");
+export const fetchAUSalesGraphAllProd = async (from: string, to: string) => {
+  const graph_url = api_au_graph_data(from, to);
   const response = await apiClient.get(graph_url);
+  return response.data;
+};
+
+export const fetchAUSalesTableAllProd = async (from: string, to: string) => {
+  const table_url = api_au_table_data(from, to);
+  const response = await apiClient.get(table_url);
   return response.data;
 };
 
