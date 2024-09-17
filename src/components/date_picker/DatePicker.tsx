@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import dayjs from "dayjs";
 import styles from "./DatePicker.module.css";
+import { useReportingCtx } from "../../context/ReportingContext";
 
 const months = Array.from({ length: 12 }, (_, i) =>
   dayjs().month(i).format("MMMM")
@@ -19,6 +20,8 @@ const DatePicker: React.FC = () => {
   const [isYearDropdownOpen, setYearDropdownOpen] = useState(false);
 
   const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  const { updateReportingDate } = useReportingCtx();
 
   // Generate days of the current month
   const generateDays = () => {
@@ -47,6 +50,7 @@ const DatePicker: React.FC = () => {
       const newDate = currentDate.date(day);
       setSelectedDate(newDate);
       setCalendarOpen(false);
+      updateReportingDate(newDate);
     }
   };
 

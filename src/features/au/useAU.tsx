@@ -4,15 +4,38 @@ import {
 } from "react-query";
 import {
   fetchAUSalesGraphAllProd,
-  // fetchItemById,
-  // createItem,
-  // updateItem,
-  // deleteItem,
+  fetchAUSalesTableAllProd,
 } from "../../api/au_crud";
+import { useReportingCtx } from "../../context/ReportingContext";
 
-// Fetch all items
+// Fetch graph data
 export const useAUGraphData = () => {
-  return useQuery("graph", fetchAUSalesGraphAllProd);
+  const {
+    reportingDate: { from, to },
+  } = useReportingCtx();
+  return useQuery(
+    ["graph", from, to], // Query key: when `from` or `to` changes, the query refetches
+    () => fetchAUSalesGraphAllProd(from, to), // Function to fetch data
+    {
+      enabled: !!from && !!to, // Ensure the query only runs if both `from` and `to` are valid
+      keepPreviousData: true, // Keeps previous data while fetching new data
+    }
+  );
+};
+
+// Fetch table data
+export const useAUTableData = () => {
+  const {
+    reportingDate: { from, to },
+  } = useReportingCtx();
+  return useQuery(
+    ["table", from, to], // Query key: when `from` or `to` changes, the query refetches
+    () => fetchAUSalesTableAllProd(from, to), // Function to fetch data
+    {
+      enabled: !!from && !!to, // Ensure the query only runs if both `from` and `to` are valid
+      keepPreviousData: true, // Keeps previous data while fetching new data
+    }
+  );
 };
 
 // // Fetch single item by ID
